@@ -1,0 +1,17 @@
+//Color
+$primary-color: #0671b7;
+$primary-bg-text-color: #fff;
+$secondary-color: #f0ff00;
+
+// Typography
+$font-family-base: 'Noto Sans', MalgunGothic, Dotum, Gulim, Meiryo, Roboto,
+  'Helvetica Neue', Arial, 'Open Sans', sans-serif !default;
+$font-size-base: 14px !default; // Assumes the browser default, typically `16px`. 14/16px
+$line-height-base: 1.3rem !default;
+$font-color-base: #333 !default;
+
+// form
+$input-border: rgba(
+  $color: #666,
+  $alpha: 0.2
+);

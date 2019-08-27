@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hanbiro Talk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../css/hanbiro.talk.min.css" rel="stylesheet" type="text/css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- module : Convert an SVG image to an inline element -->
+  <script src="../../node_modules/@iconfu/svg-inject/dist/svg-inject.min.js"></script>
+</head>
+
+<body>
+  <div class="msg-wrap">
+    <!-- 메인 메뉴 부분 -->
+    <nav class="main-menu">
+      <ul>
+        <li>
+          <a href="main.html">
+            <img src="../images/ico-org.svg" alt="조직도" class="injectable" />
+            <span class="sr-only">조직도</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="../images/ico-favorite.svg" alt="즐겨찾기" class="injectable" />
+            <span class="sr-only">즐겨찾기</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="">
+            <img src="../images/ico-chat.svg" alt="대화 목록" class="injectable" />
+            <span class="sr-only">대화 목록</span>
+            <span class="new-label">999+</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="../images/ico-groupware.svg" alt="그룹웨어" class="injectable" />
+            <span class="sr-only">그룹웨어</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- /메인 메뉴 부분 -->
+
+    <!-- aside-left : 조직도, 대화 목록 -->
+    <div class="aside-left">
+      <!-- 조직도 -->
+      <div class="org-list" style="display: none;">
+        <div class="top-user-info-wrap">
+          <div class="top-user-info">
+            <span class="user-pic-wrap no-pic"><img src="../images/user-no-pic.svg" alt="사진 없음" /></span>
+            <span class="user-name">홍길동 <span class="user-dept">부장</span></span>
+            <span class="user-msg">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Curabitur aliquet, massa et luctus accumsan, tortor nulla cursus
+              tortor, aliquet vestibulum quam justo eget nunc. Sed blandit,
+              quam nec vehicula molestie, augue nulla porttitor arcu, non
+              vestibulum lectus ligula nec quam. Sed sed est at lacus cursus
+              accumsan. Nulla pretium porttitor nunc at luctus. Integer eget
+              arcu nibh. Aenean et mattis orci. Vestibulum gravida gravida
+              erat, sit amet blandit elit vulputate non. Vivamus ac ligula at
+              nisl scelerisque elementum id nec justo. In hac habitasse platea
+              dictumst.</span>
+            <span class="user-action-aria">
+              <button type="button">
+                <img src="../images/ico-punch-out.svg" alt="퇴근 체크" />
+                <span class="sr-only">퇴근 체크</span>
+              </button>
+              <button type="button">
+                <img src="../images/ico-log-out.svg" alt="로그아웃" />
+                <span class="sr-only">로그아웃</span>
+              </button>
+            </span>
+          </div>
+          <!-- /.top-user-info -->
+        </div>
+
+        <!-- 검색 -->
+        <div class="msg-search">
+          <input type="search" placeholder="검색할 사원명을 입력하세요. " />
+          <img src="../images/ico-search.svg" />
+        </div>
+        <!-- /검색 -->
+
+        <!-- 조직도 Tree -->
+        <div class="msg-org-list">
+          <ul class="msg-org">
+            <li>
+              <ul class="msg-user-list">
+                <!-- 1 depth -->
+                <!-- 상태별 class 온라인: online / 오프라인: offline / 다른 용무중: busy / 회의중: meeting / 통화중: call / 외출중: out / 식사중: meal -->
+                <li class="online">
+                  <!-- 스크린 리더용 -->
+                  <span class="sr-only">온라인 PC로 로그인</span>
+                  <a href="#" class="user-wrap">
+                    <span class="user-pic-wrap pc">
+                      <span class="user-pic">
+                        <img src="http://placehold.it/50x50" alt="" />
+                      </span>
+                    </span>
+                    <span class="user-name">
+                      김아무개
+                      <span class="user-message">힘차게 그들은 위하여 있는 풀이 뜨거운지라, 목숨이
+                        쓸쓸하랴? 끓는 많이 물방아 힘차게 공자는 소담스러운
+                        피어나는 되려니와, 평화스러운 부패뿐이다. 전인</span>
+                    </span>
+                  </a>
+                </li>
+                <!-- /1 depth -->
+                <!-- 1 depth -->
+                <li class="offline current-chat">
+                  <!-- 현재 대화 표시 class - current-chat -->
+                  <!-- 스크린 리더용 -->
+                  <span class="sr-only">오프라인 모바일로 로그인</span>
+                  <!-- 디바이스별 class 데스크톱: pc / 휴대폰: mobile -->
+                  <a href="#" class="user-wrap">
+                    <span class="user-pic-wrap mobile">
+                      <!-- 사진 없을 때 class : no-pic -->
+                      <span class="user-pic no-pic">
+                        <img src="../images/user-no-pic.svg" alt="사진 없음" />
+                      </span>
+                    </span>
+                    <span class="user-name">박철수<span class="user-message">몸이 봄바람을 위하여 있는 가치를 끓는다. 이는
+                        행복스럽고 뜨거운지라, 열락의 인도하겠다는 구하지
+                        청춘의 능히 교향악이다. 싹이 봄날의 우리의 그들은
+                        낙원을 것이다. 할지라도 자신과 그들에게 하는
+                        찾아다녀도, 같이 타오르고 몸이 없는 있으랴? 청춘의
+                        싹이 발휘하기 구하기 미인을 이상 자신과 역사를 듣는다.
+                        그림자는 평화스러운 거선의 그들은 들어 소담스러운
+                        쓸쓸하랴? 새 웅대한 없으면 인간은 있으랴? 두기 인간의
+                        가지에 위하여서. 청춘의 가진 피가 노래하며 영락과
+                        약동하다.</span></span>
+                  </a>
+                </li>
+                <!-- /1 depth -->
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="dept-name">
+                <span class="dept-name-tit">부서 이름 1</span>
+                <span class="staff-no">(76/100)</span>
+              </a>
+              <ul class="msg-user-list">
+                <!-- 1 depth -->
+                <!-- 상태별 class 온라인: online / 오프라인: offline / 다른 용무중: busy / 회의중: meeting / 통화중: call / 외출중: out / 식사중: meal -->
+                <li class="online">
+                  <span class="sr-only">온라인 PC로 로그인</span>
+                  <a href="#" class="user-wrap">
+                    <span class="user-pic-wrap pc-mobile">
+                      <span class="user-pic">
+                        <img src="http://placehold.it/50x50" alt="" />
+                      </span>
+                    </span>
+                    <span class="user-name">김아무개<span class="user-message">힘차게 그들은 위하여 있는 풀이 뜨거운지라, 목숨이
+                        쓸쓸하랴? 끓는 많이 물방아 힘차게 공자는 소담스러운
+                        피어나는 되려니와, 평화스러운 부패뿐이다. 전인
+                        관현악이며, 실로 예가 노래하며 내려온 목숨이 웅대한
+                        못할 쓸쓸하랴? 주며, 불러 이상은 광야에서 꽃 우리
+                        황금시대다. 관현악이며, 바이며, 속에서 운다. 피는
+                        우리의 동산에는 반짝이는 이상 품고 날카로우나
+                        황금시대의 공자는 있다. 피고, 더운지라 우리의 꽃 것이
+                        때까지 부패뿐이다. 대중을 얼음과 피어나기 하는 설레는
+                        때문이다. 새 불러 피고, 어디 생생하며, 풍부하게
+                        있는가? 얼마나 오직 것이다.보라, 심장은 봄바람이다.
+                        이상의 가는 곳이 인간이 같은 아름다우냐?</span></span>
+                  </a>
+                </li>
+                <!-- /1 depth -->
+                <!-- 1 depth -->
+                <li class="offline">
+                  <span class="sr-only">오프라인</span>
+                  <!-- 디바이스별 class 데스크톱: pc / 휴대폰: mobile -->
+                  <a href="#" class="user-wrap">
+                    <span class="user-pic-wrap mobile">
+                      <!-- 사진 없을 때 class : no-pic -->
+                      <span class="user-pic no-pic">
+                        <img src="../images/user-no-pic.svg" alt="" />
+                      </span>
+                    </span>
+                    <span class="user-name">박철수<span class="user-message">몸이 봄바람을 위하여 있는 가치를 끓는다. 이는
+                        행복스럽고 뜨거운지라, 열락의 인도하겠다는 구하지
+                        청춘의 능히 교향악이다. 싹이 봄날의 우리의 그들은
+                        낙원을 것이다. 할지라도 자신과 그들에게 하는
+                        찾아다녀도, 같이 타오르고 몸이 없는 있으랴? 청춘의
+                        싹이 발휘하기 구하기 미인을 이상 자신과 역사를 듣는다.
+                        그림자는 평화스러운 거선의 그들은 들어 소담스러운
+                        쓸쓸하랴? 새 웅대한 없으면 인간은 있으랴? 두기 인간의
+                        가지에 위하여서. 청춘의 가진 피가 노래하며 영락과
+                        약동하다.</span></span>
+                  </a>
+                </li>
+                <!-- /1 depth -->
+                <li class="has-child">
+                  <a href="#" class="dept-name">
+                    <span class="dept-name-tit">부서 이름 1-1</span>
+                    <span class="staff-no">(22/51)</span>
+                  </a>
+                  <ul>
+                    <!-- 2 depth -->
+                    <li class="busy">
+                      <span class="sr-only">다른 용무중 pc로 로그인</span>
+                      <a href="#" class="user-wrap">
+                        <span class="user-pic-wrap pc">
+                          <span class="user-pic">
+                            <img src="http://placehold.it/50x50" alt="" />
+                          </span>
+                        </span>
+                        <span class="user-name">이영희<span class="user-message">때까지 용기가 가치를 이성은 어디 커다란 들어 이는
+                            교향악이다. 반짝이는 이 노래하며 구하지 이상의
+                            동력은 무한한 것이다. 무엇을 이 얼마나 끝에 목숨이
+                            피어나기 있는가?</span></span>
+                      </a>
+                    </li>
+                    <!-- /2 depth -->
+                    <li class="has-child">
+                      <a href="#" class="dept-name">
+                        <span class="dept-name-tit">부서 이름 1-1-1</span>
+                        <span class="staff-no">(22/51)</span>
+                      </a>
+                      <ul>
+                        <!-- 3 depth -->
+                        <li class="busy">
+                          <span class="sr-only">다른 용무중 모바일로 로그인</span>
+                          <a href="#" class="user-wrap">
+                            <span class="user-pic-wrap mobile">
+                              <span class="user-pic">
+                                <img src="http://placehold.it/50x50" alt="" />
+                              </span>
+                            </span>
+                            <span class="user-name">최민주<span class="user-message">너의 보배를 발휘하기 그들의 광야에서 있으랴?
+                                동산에는 하여도 구하지 타오르고 들어
+                                행복스럽고 대중을 황금시대를 있음으로써
+                                봄바람이다. 못하다 얼마나 같이, 산야에 석가는
+                                우리 그들은 구하지 있는가? 산야에 그들은 되는
+                                굳세게 것이다.</span></span>
+                          </a>
+                        </li>
+                        <!-- /3 depth -->
+                        <li class="has-child">
+                          <a href="#" class="dept-name">
+                            <span class="dept-name-tit">부서 이름 1-1-1-1</span>
+                            <span class="staff-no">(22/51)</span>
+                          </a>
+                          <ul>
+                            <!-- 4 depth -->
+                            <li class="busy">
+                              <span class="sr-only">다른 용무중 pc로 로그인</span>
+                              <a href="#" class="user-wrap">
+                                <span class="user-pic-wrap pc">
+                                  <span class="user-pic">
+                                    <img src="http://placehold.it/50x50" alt="" />
+                                  </span>
+                                </span>
+                                <span class="user-name">민들래
+                                  <span class="user-message">어디 이상 산야에 얼마나 그들은 것이다.
+                                    그들을 지혜는 주는 얼마나 약동하다.
+                                    소리다.이것은 목숨을 인류의 불어 꽃이 속에
+                                    철환하였는가?</span>
+                                </span>
+                              </a>
+                            </li>
+                            <!-- /4 depth -->
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="dept-name">
+                <span class="dept-name-tit">부서 이름 2</span>
+                <span class="staff-no">(22/51)</span>
+              </a>
+              <ul class="msg-user-list">
+                <!-- 1 depth -->
+                <li class="online">
+                  <span class="sr-only">온라인 pc로 로그인</span>
+                  <a href="#" class="user-wrap">
+                    <span class="user-pic-wrap pc">
+                      <span class="user-pic">
+                        <img src="http://placehold.it/50x50" alt="" />
+                      </span>
+                    </span>
+                    <span class="user-name">김아무개
+                      <span class="user-message">힘차게 그들은 위하여 있는 풀이 뜨거운지라, 목숨이
+                        쓸쓸하랴? 끓는 많이 물방아 힘차게 공자는 소담스러운
+                        피어나는 되려니와, 평화스러운 부패뿐이다. 전인
+                        관현악이며, 실로 예가 노래하며 내려온 목숨이 웅대한
+                        못할 쓸쓸하랴? 주며, 불러 이상은 광야에서 꽃 우리
+                        황금시대다. 관현악이며, 바이며, 속에서 운다. 피는
+                        우리의 동산에는 반짝이는 이상 품고 날카로우나
+                        황금시대의 공자는 있다. 피고, 더운지라 우리의 꽃 것이
+                        때까지 부패뿐이다. 대중을 얼음과 피어나기 하는 설레는
+                        때문이다. 새 불러 피고, 어디 생생하며, 풍부하게
+                        있는가? 얼마나 오직 것이다.보라, 심장은 봄바람이다.
+                        이상의 가는 곳이 인간이 같은 아름다우냐?</span>
+                    </span>
+                  </a>
+                </li>
+                <!-- /1 depth -->
+                <!-- 1 depth -->
+                <li class="offline">
+                  <span class="sr-only">오프라인</span>
+                  <a href="#" class="user-wrap">
+                    <span class="user-pic-wrap mobile">
+                      <span class="user-pic no-pic">
+                        <img src="../images/user-no-pic.svg" alt="" />
+                      </span>
+                    </span>
+                    <span class="user-name">박철수<span class="user-message">몸이 봄바람을 위하여 있는 가치를 끓는다. 이는
+                        행복스럽고 뜨거운지라, 열락의 인도하겠다는 구하지
+                        청춘의 능히 교향악이다. 싹이 봄날의 우리의 그들은
+                        낙원을 것이다. 할지라도 자신과 그들에게 하는
+                        찾아다녀도, 같이 타오르고 몸이 없는 있으랴? 청춘의
+                        싹이 발휘하기 구하기 미인을 이상 자신과 역사를 듣는다.
+                        그림자는 평화스러운 거선의 그들은 들어 소담스러운
+                        쓸쓸하랴? 새 웅대한 없으면 인간은 있으랴? 두기 인간의
+                        가지에 위하여서. 청춘의 가진 피가 노래하며 영락과
+                        약동하다.</span>
+                    </span>
+                  </a>
+                </li>
+                <!-- /1 depth -->
+                <li class="has-child">
+                  <a href="#" class="dept-name">
+                    <span class="dept-name-tit">부서 이름 2-1</span>
+                    <span class="staff-no">(22/51)</span>
+                  </a>
+                  <ul>
+                    <!-- 2 depth -->
+                    <li class="busy">
+                      <span class="sr-only">다른 용무중 pc로 로그인</span>
+                      <a href="#" class="user-wrap">
+                        <span class="user-pic-wrap pc">
+                          <span class="user-pic">
+                            <img src="http://placehold.it/50x50" alt="" />
+                          </span>
+                        </span>
+                        <span class="user-name">이영희
+                          <span class="user-message">때까지 용기가 가치를 이성은 어디 커다란 들어 이는
+                            교향악이다. 반짝이는 이 노래하며 구하지 이상의
+                            동력은 무한한 것이다. 무엇을 이 얼마나 끝에 목숨이
+                            피어나기 있는가?</span>
+                        </span>
+                      </a>
+                    </li>
+                    <!-- /2 depth -->
+                    <li class="has-child">
+                      <a href="#" class="dept-name">
+                        <span class="dept-name-tit">부서 이름 2-1-1</span>
+                        <span class="staff-no">(22/51)</span>
+                      </a>
+                      <ul>
+                        <!-- 3 depth -->
+                        <li class="busy meeting">
+                          <span class="sr-only">회의중 모바일로 로그인</span>
+                          <a href="#" class="user-wrap">
+                            <span class="user-pic-wrap mobile">
+                              <span class="user-pic">
+                                <img src="http://placehold.it/50x50" alt="" />
+                              </span>
+                            </span>
+                            <span class="user-name">최민주<span class="user-message">너의 보배를 발휘하기 그들의 광야에서 있으랴?
+                                동산에는 하여도 구하지 타오르고 들어
+                                행복스럽고 대중을 황금시대를 있음으로써
+                                봄바람이다. 못하다 얼마나 같이, 산야에 석가는
+                                우리 그들은 구하지 있는가? 산야에 그들은 되는
+                                굳세게 것이다.</span>
+                            </span>
+                          </a>
+                        </li>
+                        <!-- /3 depth -->
+                        <li class="has-child">
+                          <a href="#" class="dept-name">
+                            <span class="dept-name-tit">부서 이름 2-1-1-1</span>
+                            <span class="staff-no">(22/51)</span>
+                          </a>
+                          <ul>
+                            <!-- 4 depth -->
+                            <li class="busy call">
+                              <span class="sr-only">통화중 pc로 로그인</span>
+                              <a href="#" class="user-wrap">
+                                <span class="user-pic-wrap pc">
+                                  <span class="user-pic">
+                                    <img src="http://placehold.it/50x50" alt="" />
+                                  </span>
+                                </span>
+                                <span class="user-name">민들래
+                                  <span class="user-message">어디 이상 산야에 얼마나 그들은 것이다.
+                                    그들을 지혜는 주는 얼마나 약동하다.
+                                    소리다.이것은 목숨을 인류의 불어 꽃이 속에
+                                    철환하였는가?</span>
+                                </span>
+                              </a>
+                            </li>
+                            <!-- /4 depth -->
+                            <!-- 4 depth -->
+                            <li class="busy out">
+                              <span class="sr-only">외출중 모바일로 로그인</span>
+                              <a href="#" class="user-wrap">
+                                <span class="user-pic-wrap mobile">
+                                  <span class="user-pic">
+                                    <img src="http://placehold.it/50x50" alt="" />
+                                  </span>
+                                </span>
+                                <span class="user-name">한○○<span class="user-message">기쁘며, 얼음에 대중을 것은 날카로우나
+                                    없으면, 찾아 이상은 구하지 것이다. 새가
+                                    인생의 창공에 사라지지 역사를 청춘을 있는
+                                    것이다.</span>
+                                </span>
+                              </a>
+                            </li>
+                            <!-- /4 depth -->
+                            <li class="busy meal">
+                              <span class="sr-only">다른 용무중 모바일로 로그인</span>
+                              <a href="#" class="user-wrap">
+                                <span class="user-pic-wrap mobile">
+                                  <span class="user-pic">
+                                    <img src="http://placehold.it/50x50" alt="" />
+                                  </span>
+                                </span>
+                                <span class="user-name">신○○
+                                  <span class="user-message">인간이 이상, 같은 꽃 힘차게 심장의 뼈
+                                    피어나는 교향악이다. 꽃이 얼마나 크고
+                                    같이, 봄바람이다. 목숨을 것이다.보라,
+                                    생명을 인생에 보이는 그리하였는가? 영락과
+                                    두기 가슴이 청춘 아니더면, 발휘하기 같은
+                                    커다란 말이다.</span>
+                                </span>
+                              </a>
+                            </li>
+                            <!-- /4 depth -->
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <!-- /1 depth -->
+          </ul>
+        </div>
+        <!-- /.msg-org-list -->
+      </div>
+      <!-- /조직도 -->
+
+      <!-- 대화 목록 -->
+      <div class="chat-list">
+        <!-- 사용자 정보 -->
+        <div class="top-user-info-wrap">
+          <div class="top-user-info">
+            <span class="user-pic-wrap no-pic"><img src="../images/user-no-pic.svg" alt="사진 없음" /></span>
+            <span class="user-name">홍길동 <span class="user-dept">부장</span></span>
+            <span class="user-msg">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Curabitur aliquet, massa et luctus accumsan, tortor nulla cursus
+              tortor, aliquet vestibulum quam justo eget nunc. Sed blandit,
+              quam nec vehicula molestie, augue nulla porttitor arcu, non
+              vestibulum lectus ligula nec quam. Sed sed est at lacus cursus
+              accumsan. Nulla pretium porttitor nunc at luctus. Integer eget
+              arcu nibh. Aenean et mattis orci. Vestibulum gravida gravida
+              erat, sit amet blandit elit vulputate non. Vivamus ac ligula at
+              nisl scelerisque elementum id nec justo. In hac habitasse platea
+              dictumst.</span>
+            <span class="user-action-aria">
+              <button type="button">
+                <img src="../images/ico-punch-out.svg" alt="퇴근 체크" class="injectable" />
+                <span class="sr-only">퇴근 체크</span>
+              </button>
+              <button type="button">
+                <img src="../images/ico-log-out.svg" alt="로그아웃" class="injectable" />
+                <span class="sr-only">로그아웃</span>
+              </button>
+            </span>
+          </div>
+        </div>
+        <!-- /사용자 정보 -->
+
+        <!-- 검색 -->
+        <div class="msg-search">
+          <input type="search" placeholder="이름 및 대화명 검색" />
+          <img src="../images/ico-search.svg" />
+        </div>
+        <!--/ 검색 -->
+
+        <!-- 대화 목록 tree -->
+        <div class="msg-chat-list-wrap">
+          <div class="msg-chat-tag">
+            <a href="#" class="tag-name">
+              <span class="tag-name-tit">태그명 A</span>
+              <span class="new-label">3</span>
+            </a>
+            <div class="more-set">
+              <button type="button" class="btn-more">
+                <img src="../images/ico-more2.svg" alt="더보기" class="injectable" />
+                <span class="sr-only">더보기</span>
+              </button>
+              <ul>
+                <li><a href="">태그 변경</a></li>
+                <li><a href="">태그 삭제</a></li>
+              </ul>
+            </div>
+          </div>
+          <ul class="msg-chat-list">
+            <li>
+              <!-- 1:1 대화 -->
+              <span class="chat-pic-wrap">
+                <span class="user-pic no-pic">
+                  <img src="../images/user-no-pic.svg" alt="사진 없음" />
+                </span>
+              </span>
+              <div class="chat-name-set">
+                <span class="chat-name"><img src="../images/ico-favorite2.svg" alt="즐겨찾기" class="icon-favorite" />김아무개</span>
+                <div class="more-set">
+                  <button type="button" class="btn-more">
+                    <img src="../images/ico-more2.svg" alt="더보기" class="injectable" />
+                    <span class="sr-only">더보기</span>
+                  </button>
+                  <ul>
+                    <li><a href="">모든 메시지 읽기</a></li>
+                    <li><a href="">대화방 별명 변경</a></li>
+                    <li><a href="">대화방 나가기</a></li>
+                    <li><a href="">알림 끄기</a></li>
+                    <li><a href="">즐겨찾기 해제</a></li>
+                    <li><a href="">태그 등록</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="chat-message-wrap">
+                <span class="chat-message">
+                  힘차게 그들은 위하여 있는 풀이 뜨거운지라, 목숨이 쓸쓸하랴?
+                  끓는 많이 물방아 힘차게 공자는 소담스러운 피어나는 되려니와,
+                  평화스러운 부패뿐이다. 전인 관현악이며, 실로 예가 노래하며
+                  내려온 목숨이 웅대한 못할 쓸쓸하랴? 주며, 불러 이상은
+                  광야에서 꽃 우리 황금시대다. 관현악이며, 바이며, 속에서
+                  운다. 피는 우리의 동산에는 반짝이는 이상 품고 날카로우나
+                  황금시대의 공자는 있다. 피고, 더운지라 우리의 꽃 것이 때까지
+                  부패뿐이다. 대중을 얼음과 피어나기 하는 설레는 때문이다. 새
+                  불러 피고, 어디 생생하며, 풍부하게 있는가? 얼마나 오직
+                  것이다.보라, 심장은 봄바람이다. 이상의 가는 곳이 인간이 같은
+                  아름다우냐?
+                  <span class="update-time">04-17 1:51 PM</span>
+                </span>
+                <span class="new-label">1</span>
+              </div>
+            </li>
+            <li>
+              <!-- 1:2 대화 class : type2 -->
+              <span class="chat-pic-wrap type2">
+                <!-- 사진 없을 때 class : no-pic -->
+                <span class="user-pic no-pic">
+                  <img src="../images/user-no-pic.svg" alt="사진 없음" />
+                </span>
+                <span class="user-pic">
+                  <img src="http://placehold.it/50x50" alt="" />
+                </span>
+              </span>
+              <div class="chat-name-set">
+                <span class="chat-name">Project AAA</span>
+                <div class="more-set">
+                  <button type="button" class="btn-more">
+                    <img src="../images/ico-more2.svg" alt="더보기" class="injectable" />
+                    <span class="sr-only">더보기</span>
+                  </button>
+                  <ul>
+                    <li><a href="">모든 메시지 읽기</a></li>
+                    <li><a href="">대화방 별명 변경</a></li>
+                    <li><a href="">대화방 나가기</a></li>
+                    <li><a href="">알림 끄기</a></li>
+                    <li><a href="">즐겨찾기 등록</a></li>
+                    <li><a href="">태그 등록</a></li>
+                  </ul>
+                </div>
+                <span class="alert-off">
+                  <img src="../images/ico-chat-alarm-off.svg" class="injectable" alt="알람 꺼짐" />
+                  <span class="sr-only">알람 꺼짐</span>
+                </span>
+              </div>
+              <div class="chat-message-wrap">
+                <span class="chat-message">
+                  몸이 봄바람을 위하여 있는 가치를 끓는다. 이는 행복스럽고
+                  뜨거운지라, 열락의 인도하겠다는 구하지 청춘의 능히
+                  교향악이다. 싹이 봄날의 우리의 그들은 낙원을 것이다.
+                  할지라도 자신과 그들에게 하는 찾아다녀도, 같이 타오르고 몸이
+                  없는 있으랴? 청춘의 싹이 발휘하기 구하기 미인을 이상 자신과
+                  역사를 듣는다. 그림자는 평화스러운 거선의 그들은 들어
+                  소담스러운 쓸쓸하랴? 새 웅대한 없으면 인간은 있으랴? 두기
+                  인간의 가지에 위하여서. 청춘의 가진 피가 노래하며 영락과
+                  약동하다.
+                  <span class="update-time">04-17 1:51 PM</span>
+                </span>
+                <span class="new-label">2</span>
+              </div>
+            </li>
+          </ul>
+          <ul class="msg-chat-list without-tag">
+            <li>
+              <!-- 1:3 이상 대화 class : type3 -->
+              <span class="chat-pic-wrap type3">
+                <span class="user-pic no-pic">
+                  <img src="../images/user-no-pic.svg" alt="사진 없음" />
+                </span>
+                <span class="user-pic">
+                  <img src="http://placehold.it/50x50" alt="" />
+                </span>
+                <span class="user-pic">
+                  <img src="http://placehold.it/50x50" alt="" />
+                </span>
+                <span class="user-num">
+                  4
+                </span>
+              </span>
+              <div class="chat-name-set">
+                <span class="chat-name">Team B</span>
+                <div class="more-set">
+                  <button type="button" class="btn-more">
+                    <img src="../images/ico-more2.svg" alt="더보기" class="injectable" />
+                    <span class="sr-only">더보기</span>
+                  </button>
+                  <ul>
+                    <li><a href="">모든 메시지 읽기</a></li>
+                    <li><a href="">대화방 별명 변경</a></li>
+                    <li><a href="">대화방 나가기</a></li>
+                    <li><a href="">알림 끄기</a></li>
+                    <li><a href="">즐겨찾기 등록</a></li>
+                    <li><a href="">태그 등록</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="chat-message-wrap">
+                <span class="chat-message">
+                  <!-- 현재 진행중인 대화 표시 class: current-chat -->
+                  몸이 봄바람을 위하여 있는 가치를 끓는다. 이는 행복스럽고
+                  뜨거운지라, 열락의 인도하겠다는 구하지 청춘의 능히
+                  교향악이다. 싹이 봄날의 우리의 그들은 낙원을 것이다.
+                  할지라도 자신과 그들에게 하는 찾아다녀도, 같이 타오르고 몸이
+                  없는 있으랴? 청춘의 싹이 발휘하기 구하기 미인을 이상 자신과
+                  역사를 듣는다. 그림자는 평화스러운 거선의 그들은 들어
+                  소담스러운 쓸쓸하랴? 새 웅대한 없으면 인간은 있으랴? 두기
+                  인간의 가지에 위하여서. 청춘의 가진 피가 노래하며 영락과
+                  약동하다.
+                  <span class="update-time">04-17 1:51 PM</span>
+                </span>
+                <span class="new-label">11</span>
+              </div>
+            </li>
+            <li class="current-chat">
+              <!-- 1:3 이상 대화 class : type3 -->
+              <span class="chat-pic-wrap type3">
+                <span class="user-pic">
+                  <img src="http://placehold.it/50x50" alt="" />
+                </span>
+                <span class="user-pic">
+                  <img src="http://placehold.it/50x50" alt="" />
+                </span>
+                <span class="user-pic no-pic">
+                  <img src="../images/user-no-pic.svg" alt="" />
+                </span>
+                <span class="user-num">
+                  99+
+                </span>
+              </span>
+              <div class="chat-name-set">
+                <span class="chat-name">Team C</span>
+                <div class="more-set">
+                  <button type="button" class="btn-more">
+                    <img src="../images/ico-more2.svg" alt="더보기" class="injectable" />
+                    <span class="sr-only">더보기</span>
+                  </button>
+                  <ul>
+                    <li><a href="">모든 메시지 읽기</a></li>
+                    <li><a href="">대화방 별명 변경</a></li>
+                    <li><a href="">대화방 나가기</a></li>
+                    <li><a href="">알림 끄기</a></li>
+                    <li><a href="">즐겨찾기 등록</a></li>
+                    <li><a href="">태그 등록</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="chat-message-wrap">
+                <span class="chat-message">
+                  몸이 봄바람을 위하여 있는 가치를 끓는다. 이는 행복스럽고
+                  뜨거운지라, 열락의 인도하겠다는 구하지 청춘의 능히
+                  교향악이다. 싹이 봄날의 우리의 그들은 낙원을 것이다.
+                  할지라도 자신과 그들에게 하는 찾아다녀도, 같이 타오르고 몸이
+                  없는 있으랴? 청춘의 싹이 발휘하기 구하기 미인을 이상 자신과
+                  역사를 듣는다. 그림자는 평화스러운 거선의 그들은 들어
+                  소담스러운 쓸쓸하랴? 새 웅대한 없으면 인간은 있으랴? 두기
+                  인간의 가지에 위하여서. 청춘의 가진 피가 노래하며 영락과
+                  약동하다.
+                  <span class="update-time">04-17 1:51 PM</span>
+                </span>
+                <span class="new-label">999+</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- /대화 목록 tree -->
+      </div>
+      <!-- /대화 목록 -->
+
+      <!-- /.chat-list -->
+    </div>
+    <!-- /aside-left : 조직도, 대화 목록 -->
+
+    <!-- aside-right : 대화창 -->
+    <div class="aside-right">
+      <!-- 대화 목록이 없을 때
+        <div class="no-chat-room">
+        <img src="../images/lc-icon.png">
+        대화 상대를 클릭하여 대화를 시작해 보세요.
+      </div> -->
+      <div class="chat-root">
+        <header class="chat-header">
+          <div class="top-user-info">
+            <!-- 1:1 대화
+            <span class="user-pic-wrap">
+              <span class="user-pic no-pic">
+                <img src="../images/user-no-pic.svg" alt="사진 없음" />
+              </span>
+            </span>-->
+
+            <!-- 1:2 대화 class : type2
+              <span class="user-pic-wrap type2">-->
+            <!-- 사진 없을 때 class : no-pic
+                <span class="user-pic no-pic">
+                    <img src="../images/user-no-pic.svg" alt="사진 없음">
+                </span>
+                <span class="user-pic">
+                    <img src="http://placehold.it/50x50" alt="">
+                </span>
+            </span>  -->
+
+            <!-- 1:3 이상 대화 class : type3 -->
+            <span class="user-pic-wrap type3">
+              <span class="user-pic no-pic">
+                <img src="../images/user-no-pic.svg" alt="사진 없음" />
+              </span>
+              <span class="user-pic">
+                <img src="http://placehold.it/50x50" alt="" />
+              </span>
+              <span class="user-pic">
+                <img src="http://placehold.it/50x50" alt="" />
+              </span>
+              <span class="user-num">
+                99+
+              </span>
+            </span>
+
+            <!-- 참여자 목록 -->
+            <ul class="participants-list">
+              <li class="online"><!-- class online: 온라인, offline: 오프라인, busy: 다른 용무 -->
+
+                <span class="user-pic-wrap">
+                  <span class="user-pic">
+                    <img src="http://placehold.it/35x35" alt="이영희 부장" />
+                  </span>
+                </span>
+
+                <div class="user-info">
+                  <span class="user-name">이영희 부장</span>
+                  <span class="participants-list-action">
+                    <button type="button" class="btn-favorite active"> <!-- 즐겨찾기 시 active 클래스 추가-->
+                      <img src="../images/ico-favorite.svg" alt="즐겨찾기" class="injectable">
+                    </button>
+                  </span>
+                </div>
+
+                <span class="user-status-wrap">
+                  <span class="user-status pc">
+                    <img src="../images/ico-pc.svg" alt="PC">
+                  </span>
+                  <span class="user-status mobile">
+                    <img src="../images/ico-mobile.svg" alt="모바일">
+                  </span>
+                </span>
+              </li>
+              <li class="offline">
+                
+                <span class="user-pic-wrap">
+                  <span class="user-pic">
+                    <img src="http://placehold.it/35x35" alt="나민주 과장" />
+                  </span>
+                </span>
+
+                <div class="user-info">
+                  <span class="user-name">나민주 과장</span>
+                  <span class="participants-list-action">
+                    <button type="button" class="btn-favorite">
+                      <!-- 즐겨찾기 시 active 클래스 추가-->
+                      <img src="../images/ico-favorite.svg" alt="즐겨찾기" class="injectable">
+                    </button>
+                  </span>
+                </div>
+
+                <span class="user-status-wrap">
+                  <span class="user-status vacation">
+                    <img src="../images/ico-vacation.svg" alt="휴가">
+                  </span>
+                </span>
+              </li>
+              <li class="busy">
+
+                <span class="user-pic-wrap">
+                  <span class="user-pic">
+                    <img src="http://placehold.it/35x35" alt="John Doe Senior Manager" />
+                  </span>
+                </span>
+
+                <div class="user-info">
+                  <span class="user-name">John Doe Senior Manager</span>
+                  <span class="participants-list-action">
+                    <button type="button" class="btn-favorite">
+                      <!-- 즐겨찾기 시 active 클래스 추가-->
+                      <img src="../images/ico-favorite.svg" alt="즐겨찾기" class="injectable">
+                    </button>
+                  </span>
+                </div>
+
+                <span class="user-status-wrap">
+                  <span class="user-status pc">
+                    <img src="../images/ico-pc.svg" alt="PC">
+                  </span>
+                </span>
+
+              </li>
+              <li class="online">
+
+                <span class="user-pic-wrap">
+                  <span class="user-pic">
+                    <img src="http://placehold.it/35x35" alt="박철수 대리" />
+                  </span>
+                </span>
+
+                <div class="user-info">
+                  <span class="user-name">박철수 대리</span>
+                  <span class="participants-list-action">
+                    <button type="button" class="btn-favorite">
+                      <!-- 즐겨찾기 시 active 클래스 추가-->
+                      <img src="../images/ico-favorite.svg" alt="즐겨찾기" class="injectable">
+                    </button>
+                  </span>
+                </div>
+
+                <span class="user-status-wrap">
+                  <span class="user-status mobile">
+                    <img src="../images/ico-mobile.svg" alt="모바일">
+                  </span>
+                  <span class="user-status vacation">
+                    <img src="../images/ico-vacation.svg" alt="휴가">
+                  </span>
+                </span>
+              </li>
+              <li class="online">
+
+                <span class="user-pic-wrap">
+                  <span class="user-pic">
+                    <img src="http://placehold.it/35x35" alt="Jane Staff" />
+                  </span>
+                </span>
+
+                <div class="user-info">
+                  <span class="user-name">Jane Staff</span>
+                  <span class="participants-list-action">
+                    <button type="button" class="btn-favorite">
+                      <!-- 즐겨찾기 시 active 클래스 추가-->
+                      <img src="../images/ico-favorite.svg" alt="즐겨찾기" class="injectable">
+                    </button>
+                  </span>
+                </div>
+
+                <span class="user-status-wrap">
+                  <span class="user-status pc">
+                    <img src="../images/ico-pc.svg" alt="PC">
+                  </span>
+                  <span class="user-status mobile">
+                    <img src="../images/ico-mobile.svg" alt="모바일">
+                  </span>
+                </span>
+
+              </li>
+              <li class="offline">
+
+                <span class="user-pic-wrap">
+                  <span class="user-pic">
+                    <img src="http://placehold.it/35x35" alt="홍길동 사원" />
+                  </span>
+                </span>
+
+                <div class="user-info">
+                  <span class="user-name">홍길동 사원</span>
+                  <span class="participants-list-action">
+                    <button type="button" class="btn-favorite">
+                      <!-- 즐겨찾기 시 active 클래스 추가-->
+                      <img src="../images/ico-favorite.svg" alt="즐겨찾기" class="injectable">
+                    </button>
+                  </span>
+                </div>
+              </li>
+              <li class="offline">
+
+                <span class="user-pic-wrap">
+                  <span class="user-pic">
+                    <img src="http://placehold.it/35x35" alt="장그래 대리" />
+                  </span>
+                </span>
+
+                <div class="user-info">
+                  <span class="user-name">장그래 대리</span>
+                  <span class="participants-list-action">
+                    <button type="button" class="btn-favorite">
+                      <!-- 즐겨찾기 시 active 클래스 추가-->
+                      <img src="../images/ico-favorite.svg" alt="즐겨찾기" class="injectable">
+                    </button>
+                  </span>
+                </div>
+              </li>
+            </ul>
+
+            <!-- 1:1 대화  user-dept
+            <span class="chat-name">박철수 <span class="user-dept">차장</span></span>
+            <span class="chat-user-msg">몸이 봄바람을 위하여 있는 가치를 끓는다. 이는
+              행복스럽고 뜨거운지라, 열락의 인도하겠다는 구하지
+              청춘의 능히 교향악이다. 싹이 봄날의 우리의 그들은
+              낙원을 것이다. 할지라도 자신과 그들에게 하는
+              찾아다녀도, 같이 타오르고 몸이 없는 있으랴? 청춘의
+              싹이 발휘하기 구하기 미인을 이상 자신과 역사를 듣는다.
+              그림자는 평화스러운 거선의 그들은 들어 소담스러운
+              쓸쓸하랴? 새 웅대한 없으면 인간은 있으랴? 두기 인간의
+              가지에 위하여서. 청춘의 가진 피가 노래하며 영락과
+              약동하다.</span>-->
+
+            <!-- 1:2 이상 대화  user-num -->
+            <span class="chat-name">Team C</span>
+            <span class="user-num">총 100명</span>            
+
+            <span class="user-action-aria">
+              <button type="button">
+                <img src="../images/ico-chat-search.svg" alt="대화 내용 검색" />
+              </button>
+              <button type="button">
+                <img src="../images/ico-chat-alarm-on.svg" alt="알림 끄기" />
+                <!-- Change this image to ico-chat-alarm-off.svg and change the alt to 알림 켜기 when alarm is turned off -->
+              </button>
+              <button type="button">
+                <img src="../images/ico-chat-out.svg" alt="대화방 나가기" />
+              </button>
+              <div class="more-set">
+                <button type="button" class="btn-more">
+                  <img src="../images/ico-more.svg" alt="더보기" />
+                </button>
+                <ul>
+                  <li>
+                    <a href=""><img src="../images/ico-board.svg" alt="게시판" />
+                      게시판</a>
+                  </li>
+                  <li>
+                    <a href=""><img src="../images/ico-search2.svg" alt="지난 대화 보기" />
+                      지난 대화 보기</a>
+                  </li>
+                  <li>
+                    <a href=""><img src="../images/ico-bookmark.svg" alt="중요 메시지" />
+                      중요 메시지</a>
+                  </li>
+                  <li>
+                    <a href=""><img src="../images/ico-chat-file.svg" alt="파일 모아 보기" />
+                      파일 모아 보기</a>
+                  </li>
+                  <li>
+                    <a href=""><img src="../images/ico-voicetalk.svg" alt="보이스 토크" />
+                      보이스 토크</a>
+                  </li>
+                  <li>
+                    <a href=""><img src="../images/ico-facetalk.svg" alt="페이스 토크" />
+                      페이스 토크</a>
+                  </li>
+                </ul>
+              </div>
+            </span>
+          </div>
+        </header>
+        <!-- 채팅창 -->
+        <div class="msg-chat-body">
+          <div class="date">4월 9일 화요일</div>
+
+          <div class="chat-wrap">
+            <span class="user-pic no-pic">
+              <img src="../images/user-no-pic.svg" alt="사진 없음" />
+            </span>
+            <span class="chat-user-name">
+              박철수 차장
+            </span>
+            <div class="chat-cont-wrap">
+              <div class="chat-cont">안녕하세요.</div>
+              <span class="unread-num">98</span>
+            </div>
+            <span class="chat-time">오후 3:39</span>
+          </div>
+
+          <div class="chat-wrap my-chat">
+            <div class="chat-cont-wrap">
+              <span class="unread-num">97</span>
+              <div class="chat-cont">안녕하세요.</div>
+            </div>
+            <span class="chat-time">오후 3:42</span>
+          </div>
+
+          <div class="chat-wrap my-chat">
+            <div class="chat-cont-wrap">
+              <span class="unread-num">65</span>
+              <div class="chat-cont">수고하셨습니다.</div>
+            </div>
+            <div class="chat-cont-wrap">
+              <span class="unread-num">60</span>
+              <div class="chat-cont">자료는 내일 공유해 주세요.</div>
+            </div>
+            <span class="chat-time">오후 5:28</span>
+          </div>
+
+          <div class="date">4월 10일 수요일</div>
+
+          <div class="chat-wrap">
+            <span class="user-pic no-pic">
+              <img src="../images/user-no-pic.svg" alt="사진 없음" />
+            </span>
+            <span class="chat-user-name">
+              박철수 차장
+            </span>
+
+            <div class="chat-cont-wrap">
+              <div class="chat-cont file">
+                <div class="chat-file-wrap">
+                  <img src="../images/ico-file-pdf.svg" alt="pdf 파일" class="ico-file" />
+                  <span class="chat-file-name">20190409-회의자료.pdf</span>
+                  <span class="chat-file-size">2,519KB</span>
+                  <span class="chat-file-dl-progress">
+                    <span class="progress-bar" style="width: 40%"></span>
+                  </span>
+                </div>
+                <div class="chat-file-action">
+                  <button type="button">받기</button>
+                  <button type="button">다른 이름으로 받기</button>
+                  <button type="button">CloudDisk로 보내기</button>
+                </div>
+              </div>
+              <span class="unread-num">99</span>
+            </div>
+            <span class="chat-time">오전 10:18</span>
+          </div>
+
+          <div class="chat-wrap my-chat">
+            <div class="chat-cont-wrap">
+              <span class="unread-num">98</span>
+              <div class="chat-cont">감사합니다. 회의록도 공유할게요.</div>
+            </div>
+
+            <div class="chat-cont-wrap">
+              <span class="unread-num">98</span>
+              <div class="chat-cont file">
+                <div class="chat-file-wrap">
+                  <img src="../images/ico-file-doc.svg" alt="MS워드 파일" class="ico-file" />
+                  <span class="chat-file-name">20190409-회의록.doc</span>
+                  <span class="chat-file-size">1,716KB</span>
+                  <span class="chat-file-dl-progress">
+                    <span class="progress-bar" style="width: 25%"></span>
+                  </span>
+                </div>
+                <div class="chat-file-action">
+                  <button type="button">CloudDisk로 보내기</button>
+                </div>
+              </div>
+            </div>
+            <span class="chat-time">오후 3:42</span>
+          </div>
+
+          <!-- 이미지 파일 -->
+          <div class="chat-wrap">
+            <span class="user-pic no-pic">
+              <img src="../images/user-no-pic.svg" alt="사진 없음" />
+            </span>
+            <span class="chat-user-name">
+              박철수 차장
+            </span>
+            <div class="chat-cont-wrap">
+              <div class="chat-cont file">
+                <div class="chat-file-wrap img-thumb">
+                  <span class="img-area">
+                    <img src="http://jjalbang.today/jj1eh.gif" alt="" />
+                  </span>
+                  <span class="chat-file-name">show-me-the-money.gif</span>
+                  <span class="chat-file-size">41KB</span>
+                  <span class="chat-file-dl-progress">
+                    <span class="progress-bar" style="width: 40%"></span>
+                  </span>
+                </div>
+                <div class="chat-file-action">
+                  <button type="button">받기</button>
+                  <button type="button">다른 이름으로 받기</button>
+                  <button type="button">CloudDisk로 보내기</button>
+                </div>
+              </div>
+              <span class="unread-num">99</span>
+            </div>
+            <span class="chat-time">오전 10:18</span>
+          </div>
+
+          <div class="chat-wrap my-chat">
+            <div class="chat-cont-wrap">
+              <span class="unread-num">98</span>
+              <div class="chat-cont file">
+                <div class="chat-file-wrap img-thumb">
+                  <span class="img-area">
+                    <img src="https://t1.daumcdn.net/cfile/tistory/22413C435653EEA60B" alt="" />
+                  </span>
+                  <span class="chat-file-name">갖고와.gif</span>
+                  <span class="chat-file-size">716KB</span>
+                  <span class="chat-file-dl-progress">
+                    <span class="progress-bar" style="width: 25%"></span>
+                  </span>
+                </div>
+                <div class="chat-file-action">
+                  <button type="button">CloudDisk로 보내기</button>
+                </div>
+              </div>
+            </div>
+            <span class="chat-time">오후 3:42</span>
+          </div><!-- /이미지 파일 -->
+
+        </div>
+
+        <!-- 입력창 -->
+        <div class="msg-chat-input">
+          <div class="chat-action">
+            <button type="button">
+              <img src="../images/ico-chat-emoticon.svg" alt="이모티콘" class="injectable" />
+            </button>
+            <button type="button">
+              <img src="../images/ico-chat-file.svg" alt="파일 첨부" class="injectable" />
+            </button>
+            <button type="button">
+              <img src="../images/ico-chat-capture.svg" alt="캡처" class="injectable" />
+            </button>
+            <button type="button">
+              <img src="../images/ico-chat-typo.svg" alt="폰트 변경" class="injectable" />
+            </button>
+            <button type="button" class="btn-right">
+              <img src="../images/ico-chat-remote.svg" alt="원격 지원" class="injectable" />
+            </button>
+          </div>
+          <textarea class="chat-input-textarea" rows="5" cols="10" placeholder="메시지를 입력하세요."></textarea>
+          <div class="entering-msg">
+            박철수 차장님이 메시지를 입력중입니다.
+          </div>
+
+          <!-- 이모티콘 -->
+          <div class="emoticon-area">
+            <div class="emoticon-view">
+              <button type="button">
+                <img src="http://placehold.it/80x80" alt="">
+              </button>
+              <button type="button">
+                <img src="http://placehold.it/80x80" alt="">
+              </button>
+            </div>
+            <div class="emoticon-thumb">
+              <button type="button">
+                <img src="http://placehold.it/40x40" alt="">
+              </button>
+              <button type="button">
+                <img src="http://placehold.it/40x40" alt="">
+              </button>
+            </div>
+          </div><!-- /이모티콘 -->
+
+        </div><!-- /입력창 -->
+
+      </div>
+    </div>
+    <!-- /aside-right : 대화창 -->
+
+  </div>
+</body>
+
+<script>
+  // main navigation
+  $('.main-menu > ul > li > a').click(function () {
+    event.preventDefault();
+    $(this)
+      .parent('li')
+      .addClass('active')
+      .siblings()
+      .removeClass('active');
+  });
+
+  // Organization chart
+  $('.dept-name')
+    .siblings('ul')
+    .css('display', 'none');
+  $('.dept-name').click(function () {
+    event.preventDefault();
+    if ($(this).hasClass('open')) {
+      $(this)
+        .removeClass('open')
+        .siblings('ul')
+        .slideUp(100);
+    } else {
+      $(this)
+        .addClass('open')
+        .siblings('ul')
+        .slideDown(100);
+    }
+  });
+
+  // chat room list
+  $('.chat-list .more-set')
+      .children('ul')
+      .css('display', 'none');
+      
+  $('.tag-name')
+    .parent()
+    .next('ul')
+    .css('display', 'none');
+  $('.tag-name').click(function () {
+    event.preventDefault();
+    if ($(this).hasClass('open')) {
+      $(this)
+        .removeClass('open')
+        .parent()
+        .next('ul')
+        .slideUp(100);
+    } else {
+      $(this)
+        .addClass('open')
+        .parent()
+        .next('ul')
+        .slideDown(100);
+    }
+  });
+
+  // Convert an SVG image to an inline element
+  SVGInject(document.getElementsByClassName('injectable'));
+
+  // Chat
+  $('.more-set > .btn-more').click(function () {
+    $(this)
+      .siblings('ul')
+      .toggle();
+  });
+</script>
+
+</html>

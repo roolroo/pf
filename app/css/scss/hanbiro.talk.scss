@@ -1,0 +1,59 @@
+@import '../../../node_modules/node-normalize-scss/normalize';
+
+$fa-font-path: '../../node_modules/@fortawesome/fontawesome-free/webfonts';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/brands';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/regular';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/solid';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims';
+
+@import 'variables';
+
+@import 'component/input';
+@import 'component/button';
+@import 'component/modal';
+
+@import 'panel/layout';
+@import 'panel/login';
+@import 'panel/main-menu';
+@import 'panel/list-top';
+@import 'panel/org-list';
+@import 'panel/chatroom-list';
+@import 'panel/chat-main';
+
+html,
+body {
+  height: 100%;
+  font-size: $font-size-base;
+}
+body {
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+  color: $font-color-base;
+  &.modal-open {
+    overflow: hidden;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+// 스크린리더용
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.width-100 {
+  width: 100%;
+}
+hr {
+  margin: 10px 0;
+  border: 0;
+  border-top: #eee 1px solid;
+  border-bottom: #fff 1px solid;
+}

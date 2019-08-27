@@ -1,0 +1,434 @@
+<div class="org-list">
+  <div class="top-user-info-wrap">
+    <div class="top-user-info">
+      <span class="user-pic-wrap no-pic"
+        ><img src="../images/user-no-pic.svg" alt="사진 없음"
+      /></span>
+      <span class="user-name">홍길동 <span class="user-dept">부장</span></span>
+      <span class="user-msg"
+        >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+        aliquet, massa et luctus accumsan, tortor nulla cursus tortor, aliquet
+        vestibulum quam justo eget nunc. Sed blandit, quam nec vehicula
+        molestie, augue nulla porttitor arcu, non vestibulum lectus ligula nec
+        quam. Sed sed est at lacus cursus accumsan. Nulla pretium porttitor nunc
+        at luctus. Integer eget arcu nibh. Aenean et mattis orci. Vestibulum
+        gravida gravida erat, sit amet blandit elit vulputate non. Vivamus ac
+        ligula at nisl scelerisque elementum id nec justo. In hac habitasse
+        platea dictumst.</span
+      >
+      <span class="user-action-aria">
+        <button type="button">
+          <img src="../images/ico-punch-out.svg" alt="퇴근 체크" />
+          <span class="sr-only">퇴근 체크</span>
+        </button>
+        <button type="button">
+          <img src="../images/ico-log-out.svg" alt="로그아웃" />
+          <span class="sr-only">로그아웃</span>
+        </button>
+      </span>
+    </div>
+    <!-- /.top-user-info -->
+  </div>
+
+  <!-- 검색 -->
+  <div class="msg-search">
+    <input type="search" placeholder="검색할 사원명을 입력하세요. " />
+    <img src="../images/ico-search.svg" />
+  </div>
+  <!-- /검색 -->
+
+  <!-- 조직도 Tree -->
+  <div class="msg-org-list">
+    <ul class="msg-org">
+      <li>
+        <ul class="msg-user-list">
+          <!-- 1 depth -->
+          <!-- 상태별 class 온라인: online / 오프라인: offline / 다른 용무중: busy / 회의중: meeting / 통화중: call / 외출중: out / 식사중: meal -->
+          <li class="online">
+            <!-- 스크린 리더용 -->
+            <span class="sr-only">온라인 PC로 로그인</span>
+            <a href="#" class="user-wrap">
+              <span class="user-pic-wrap pc">
+                <span class="user-pic">
+                  <img src="http://placehold.it/50x50" alt="" />
+                </span>
+              </span>
+              <span class="user-name">
+                김아무개
+                <span class="user-message"
+                  >힘차게 그들은 위하여 있는 풀이 뜨거운지라, 목숨이 쓸쓸하랴?
+                  끓는 많이 물방아 힘차게 공자는 소담스러운 피어나는 되려니와,
+                  평화스러운 부패뿐이다. 전인</span
+                >
+              </span>
+            </a>
+          </li>
+          <!-- /1 depth -->
+          <!-- 1 depth -->
+          <li class="offline current-chat">
+            <!-- 현재 대화 표시 class - current-chat -->
+            <!-- 스크린 리더용 -->
+            <span class="sr-only">오프라인 모바일로 로그인</span>
+            <!-- 디바이스별 class 데스크톱: pc / 휴대폰: mobile -->
+            <a href="#" class="user-wrap">
+              <span class="user-pic-wrap mobile">
+                <!-- 사진 없을 때 class : no-pic -->
+                <span class="user-pic no-pic">
+                  <img src="../images/user-no-pic.svg" alt="사진 없음" />
+                </span>
+              </span>
+              <span class="user-name"
+                >박철수<span class="user-message"
+                  >몸이 봄바람을 위하여 있는 가치를 끓는다. 이는 행복스럽고
+                  뜨거운지라, 열락의 인도하겠다는 구하지 청춘의 능히 교향악이다.
+                  싹이 봄날의 우리의 그들은 낙원을 것이다. 할지라도 자신과
+                  그들에게 하는 찾아다녀도, 같이 타오르고 몸이 없는 있으랴?
+                  청춘의 싹이 발휘하기 구하기 미인을 이상 자신과 역사를 듣는다.
+                  그림자는 평화스러운 거선의 그들은 들어 소담스러운 쓸쓸하랴? 새
+                  웅대한 없으면 인간은 있으랴? 두기 인간의 가지에 위하여서.
+                  청춘의 가진 피가 노래하며 영락과 약동하다.</span
+                ></span
+              >
+            </a>
+          </li>
+          <!-- /1 depth -->
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="dept-name">
+          <span class="dept-name-tit">부서 이름 1</span>
+          <span class="staff-no">(76/100)</span>
+        </a>
+        <ul class="msg-user-list" style="display: none;">
+          <!-- 1 depth -->
+          <!-- 상태별 class 온라인: online / 오프라인: offline / 다른 용무중: busy / 회의중: meeting / 통화중: call / 외출중: out / 식사중: meal -->
+          <li class="online">
+            <span class="sr-only">온라인 PC로 로그인</span>
+            <a href="#" class="user-wrap">
+              <span class="user-pic-wrap pc-mobile">
+                <span class="user-pic">
+                  <img src="http://placehold.it/50x50" alt="" />
+                </span>
+              </span>
+              <span class="user-name"
+                >김아무개<span class="user-message"
+                  >힘차게 그들은 위하여 있는 풀이 뜨거운지라, 목숨이 쓸쓸하랴?
+                  끓는 많이 물방아 힘차게 공자는 소담스러운 피어나는 되려니와,
+                  평화스러운 부패뿐이다. 전인 관현악이며, 실로 예가 노래하며
+                  내려온 목숨이 웅대한 못할 쓸쓸하랴? 주며, 불러 이상은 광야에서
+                  꽃 우리 황금시대다. 관현악이며, 바이며, 속에서 운다. 피는
+                  우리의 동산에는 반짝이는 이상 품고 날카로우나 황금시대의
+                  공자는 있다. 피고, 더운지라 우리의 꽃 것이 때까지 부패뿐이다.
+                  대중을 얼음과 피어나기 하는 설레는 때문이다. 새 불러 피고,
+                  어디 생생하며, 풍부하게 있는가? 얼마나 오직 것이다.보라,
+                  심장은 봄바람이다. 이상의 가는 곳이 인간이 같은
+                  아름다우냐?</span
+                ></span
+              >
+            </a>
+          </li>
+          <!-- /1 depth -->
+          <!-- 1 depth -->
+          <li class="offline">
+            <span class="sr-only">오프라인</span>
+            <!-- 디바이스별 class 데스크톱: pc / 휴대폰: mobile -->
+            <a href="#" class="user-wrap">
+              <span class="user-pic-wrap mobile">
+                <!-- 사진 없을 때 class : no-pic -->
+                <span class="user-pic no-pic">
+                  <img src="../images/user-no-pic.svg" alt="" />
+                </span>
+              </span>
+              <span class="user-name"
+                >박철수<span class="user-message"
+                  >몸이 봄바람을 위하여 있는 가치를 끓는다. 이는 행복스럽고
+                  뜨거운지라, 열락의 인도하겠다는 구하지 청춘의 능히 교향악이다.
+                  싹이 봄날의 우리의 그들은 낙원을 것이다. 할지라도 자신과
+                  그들에게 하는 찾아다녀도, 같이 타오르고 몸이 없는 있으랴?
+                  청춘의 싹이 발휘하기 구하기 미인을 이상 자신과 역사를 듣는다.
+                  그림자는 평화스러운 거선의 그들은 들어 소담스러운 쓸쓸하랴? 새
+                  웅대한 없으면 인간은 있으랴? 두기 인간의 가지에 위하여서.
+                  청춘의 가진 피가 노래하며 영락과 약동하다.</span
+                ></span
+              >
+            </a>
+          </li>
+          <!-- /1 depth -->
+          <li class="has-child">
+            <a href="#" class="dept-name">
+              <span class="dept-name-tit">부서 이름 1-1</span>
+              <span class="staff-no">(22/51)</span>
+            </a>
+            <ul style="display: none;">
+              <!-- 2 depth -->
+              <li class="busy">
+                <span class="sr-only">다른 용무중 pc로 로그인</span>
+                <a href="#" class="user-wrap">
+                  <span class="user-pic-wrap pc">
+                    <span class="user-pic">
+                      <img src="http://placehold.it/50x50" alt="" />
+                    </span>
+                  </span>
+                  <span class="user-name"
+                    >이영희<span class="user-message"
+                      >때까지 용기가 가치를 이성은 어디 커다란 들어 이는
+                      교향악이다. 반짝이는 이 노래하며 구하지 이상의 동력은
+                      무한한 것이다. 무엇을 이 얼마나 끝에 목숨이 피어나기
+                      있는가?</span
+                    ></span
+                  >
+                </a>
+              </li>
+              <!-- /2 depth -->
+              <li class="has-child">
+                <a href="#" class="dept-name">
+                  <span class="dept-name-tit">부서 이름 1-1-1</span>
+                  <span class="staff-no">(22/51)</span>
+                </a>
+                <ul style="display: none;">
+                  <!-- 3 depth -->
+                  <li class="busy">
+                    <span class="sr-only">다른 용무중 모바일로 로그인</span>
+                    <a href="#" class="user-wrap">
+                      <span class="user-pic-wrap mobile">
+                        <span class="user-pic">
+                          <img src="http://placehold.it/50x50" alt="" />
+                        </span>
+                      </span>
+                      <span class="user-name"
+                        >최민주<span class="user-message"
+                          >너의 보배를 발휘하기 그들의 광야에서 있으랴? 동산에는
+                          하여도 구하지 타오르고 들어 행복스럽고 대중을
+                          황금시대를 있음으로써 봄바람이다. 못하다 얼마나 같이,
+                          산야에 석가는 우리 그들은 구하지 있는가? 산야에 그들은
+                          되는 굳세게 것이다.</span
+                        ></span
+                      >
+                    </a>
+                  </li>
+                  <!-- /3 depth -->
+                  <li class="has-child">
+                    <a href="#" class="dept-name">
+                      <span class="dept-name-tit">부서 이름 1-1-1-1</span>
+                      <span class="staff-no">(22/51)</span>
+                    </a>
+                    <ul style="display: none;">
+                      <!-- 4 depth -->
+                      <li class="busy">
+                        <span class="sr-only">다른 용무중 pc로 로그인</span>
+                        <a href="#" class="user-wrap">
+                          <span class="user-pic-wrap pc">
+                            <span class="user-pic">
+                              <img src="http://placehold.it/50x50" alt="" />
+                            </span>
+                          </span>
+                          <span class="user-name"
+                            >민들래
+                            <span class="user-message"
+                              >어디 이상 산야에 얼마나 그들은 것이다. 그들을
+                              지혜는 주는 얼마나 약동하다. 소리다.이것은 목숨을
+                              인류의 불어 꽃이 속에 철환하였는가?</span
+                            >
+                          </span>
+                        </a>
+                      </li>
+                      <!-- /4 depth -->
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="dept-name">
+          <span class="dept-name-tit">부서 이름 2</span>
+          <span class="staff-no">(22/51)</span>
+        </a>
+        <ul class="msg-user-list" style="display: none;">
+          <!-- 1 depth -->
+          <li class="online">
+            <span class="sr-only">온라인 pc로 로그인</span>
+            <a href="#" class="user-wrap">
+              <span class="user-pic-wrap pc">
+                <span class="user-pic">
+                  <img src="http://placehold.it/50x50" alt="" />
+                </span>
+              </span>
+              <span class="user-name"
+                >김아무개
+                <span class="user-message"
+                  >힘차게 그들은 위하여 있는 풀이 뜨거운지라, 목숨이 쓸쓸하랴?
+                  끓는 많이 물방아 힘차게 공자는 소담스러운 피어나는 되려니와,
+                  평화스러운 부패뿐이다. 전인 관현악이며, 실로 예가 노래하며
+                  내려온 목숨이 웅대한 못할 쓸쓸하랴? 주며, 불러 이상은 광야에서
+                  꽃 우리 황금시대다. 관현악이며, 바이며, 속에서 운다. 피는
+                  우리의 동산에는 반짝이는 이상 품고 날카로우나 황금시대의
+                  공자는 있다. 피고, 더운지라 우리의 꽃 것이 때까지 부패뿐이다.
+                  대중을 얼음과 피어나기 하는 설레는 때문이다. 새 불러 피고,
+                  어디 생생하며, 풍부하게 있는가? 얼마나 오직 것이다.보라,
+                  심장은 봄바람이다. 이상의 가는 곳이 인간이 같은
+                  아름다우냐?</span
+                >
+              </span>
+            </a>
+          </li>
+          <!-- /1 depth -->
+          <!-- 1 depth -->
+          <li class="offline">
+            <span class="sr-only">오프라인</span>
+            <a href="#" class="user-wrap">
+              <span class="user-pic-wrap mobile">
+                <span class="user-pic no-pic">
+                  <img src="../images/user-no-pic.svg" alt="" />
+                </span>
+              </span>
+              <span class="user-name"
+                >박철수<span class="user-message"
+                  >몸이 봄바람을 위하여 있는 가치를 끓는다. 이는 행복스럽고
+                  뜨거운지라, 열락의 인도하겠다는 구하지 청춘의 능히 교향악이다.
+                  싹이 봄날의 우리의 그들은 낙원을 것이다. 할지라도 자신과
+                  그들에게 하는 찾아다녀도, 같이 타오르고 몸이 없는 있으랴?
+                  청춘의 싹이 발휘하기 구하기 미인을 이상 자신과 역사를 듣는다.
+                  그림자는 평화스러운 거선의 그들은 들어 소담스러운 쓸쓸하랴? 새
+                  웅대한 없으면 인간은 있으랴? 두기 인간의 가지에 위하여서.
+                  청춘의 가진 피가 노래하며 영락과 약동하다.</span
+                >
+              </span>
+            </a>
+          </li>
+          <!-- /1 depth -->
+          <li class="has-child">
+            <a href="#" class="dept-name">
+              <span class="dept-name-tit">부서 이름 2-1</span>
+              <span class="staff-no">(22/51)</span>
+            </a>
+            <ul style="display: none;">
+              <!-- 2 depth -->
+              <li class="busy">
+                <span class="sr-only">다른 용무중 pc로 로그인</span>
+                <a href="#" class="user-wrap">
+                  <span class="user-pic-wrap pc">
+                    <span class="user-pic">
+                      <img src="http://placehold.it/50x50" alt="" />
+                    </span>
+                  </span>
+                  <span class="user-name"
+                    >이영희
+                    <span class="user-message"
+                      >때까지 용기가 가치를 이성은 어디 커다란 들어 이는
+                      교향악이다. 반짝이는 이 노래하며 구하지 이상의 동력은
+                      무한한 것이다. 무엇을 이 얼마나 끝에 목숨이 피어나기
+                      있는가?</span
+                    >
+                  </span>
+                </a>
+              </li>
+              <!-- /2 depth -->
+              <li class="has-child">
+                <a href="#" class="dept-name">
+                  <span class="dept-name-tit">부서 이름 2-1-1</span>
+                  <span class="staff-no">(22/51)</span>
+                </a>
+                <ul style="display: none;">
+                  <!-- 3 depth -->
+                  <li class="busy meeting">
+                    <span class="sr-only">회의중 모바일로 로그인</span>
+                    <a href="#" class="user-wrap">
+                      <span class="user-pic-wrap mobile">
+                        <span class="user-pic">
+                          <img src="http://placehold.it/50x50" alt="" />
+                        </span>
+                      </span>
+                      <span class="user-name"
+                        >최민주<span class="user-message"
+                          >너의 보배를 발휘하기 그들의 광야에서 있으랴? 동산에는
+                          하여도 구하지 타오르고 들어 행복스럽고 대중을
+                          황금시대를 있음으로써 봄바람이다. 못하다 얼마나 같이,
+                          산야에 석가는 우리 그들은 구하지 있는가? 산야에 그들은
+                          되는 굳세게 것이다.</span
+                        >
+                      </span>
+                    </a>
+                  </li>
+                  <!-- /3 depth -->
+                  <li class="has-child">
+                    <a href="#" class="dept-name">
+                      <span class="dept-name-tit">부서 이름 2-1-1-1</span>
+                      <span class="staff-no">(22/51)</span>
+                    </a>
+                    <ul style="display: none;">
+                      <!-- 4 depth -->
+                      <li class="busy call">
+                        <span class="sr-only">통화중 pc로 로그인</span>
+                        <a href="#" class="user-wrap">
+                          <span class="user-pic-wrap pc">
+                            <span class="user-pic">
+                              <img src="http://placehold.it/50x50" alt="" />
+                            </span>
+                          </span>
+                          <span class="user-name"
+                            >민들래
+                            <span class="user-message"
+                              >어디 이상 산야에 얼마나 그들은 것이다. 그들을
+                              지혜는 주는 얼마나 약동하다. 소리다.이것은 목숨을
+                              인류의 불어 꽃이 속에 철환하였는가?</span
+                            >
+                          </span>
+                        </a>
+                      </li>
+                      <!-- /4 depth -->
+                      <!-- 4 depth -->
+                      <li class="busy out">
+                        <span class="sr-only">외출중 모바일로 로그인</span>
+                        <a href="#" class="user-wrap">
+                          <span class="user-pic-wrap mobile">
+                            <span class="user-pic">
+                              <img src="http://placehold.it/50x50" alt="" />
+                            </span>
+                          </span>
+                          <span class="user-name"
+                            >한○○<span class="user-message"
+                              >기쁘며, 얼음에 대중을 것은 날카로우나 없으면,
+                              찾아 이상은 구하지 것이다. 새가 인생의 창공에
+                              사라지지 역사를 청춘을 있는 것이다.</span
+                            >
+                          </span>
+                        </a>
+                      </li>
+                      <!-- /4 depth -->
+                      <li class="busy meal">
+                        <span class="sr-only">다른 용무중 모바일로 로그인</span>
+                        <a href="#" class="user-wrap">
+                          <span class="user-pic-wrap mobile">
+                            <span class="user-pic">
+                              <img src="http://placehold.it/50x50" alt="" />
+                            </span>
+                          </span>
+                          <span class="user-name"
+                            >신○○
+                            <span class="user-message"
+                              >인간이 이상, 같은 꽃 힘차게 심장의 뼈 피어나는
+                              교향악이다. 꽃이 얼마나 크고 같이, 봄바람이다.
+                              목숨을 것이다.보라, 생명을 인생에 보이는
+                              그리하였는가? 영락과 두기 가슴이 청춘 아니더면,
+                              발휘하기 같은 커다란 말이다.</span
+                            >
+                          </span>
+                        </a>
+                      </li>
+                      <!-- /4 depth -->
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <!-- /1 depth -->
+    </ul>
+  </div>
+  <!-- /.msg-org-list -->
+</div>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 25 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="출근_체크" data-name="출근 체크" class="cls-1" d="M319.583,89H295V85h2v1h-1v2.012h23V86h-1V85h2v4h-0.417Zm-3.59-18.154a0.842,0.842,0,0,0-.826-0.857H299.833a0.842,0.842,0,0,0-.826.857L299,87h-1l0.007-17.154a0.842,0.842,0,0,1,.826-0.857h17.334a0.842,0.842,0,0,1,.826.857L317,87h-1ZM311,73v3h4l-7,9h-1l-7-9h4V73h1v4h-3l5,7h1l5-7h-3V73h1Z" transform="translate(-295 -69)"/>
+</svg>

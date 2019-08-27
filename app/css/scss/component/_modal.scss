@@ -1,0 +1,260 @@
+//modal : modal open 시 body에 class="modal-open" 추가
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+  background: rgba(0, 0, 0, 0.5);
+  .modal-dialog {
+    position: relative;
+    display: flex;
+    width: 500px;
+    margin: 1.75rem auto;
+    transform: translate(0, -50px);
+    transition: transform 0.3s ease-out;
+    .modal-content {
+      width: 100%;
+      background-color: #fff;
+      border-radius: 0.3rem;
+      .modal-header {
+        padding: 1.428571428571429rem;
+        padding-bottom: 0;
+        button.close {
+          float: right;
+          background: none;
+          border: none;
+          cursor: pointer;
+        }
+        &::after {
+          content: '';
+          clear: both;
+          display: table;
+        }
+      }
+      .modal-body {
+        padding: 1.428571428571429rem;
+      }
+      .modal-footer {
+        padding: 1.428571428571429rem;
+        padding-top: 0;
+        text-align: right;
+      }
+    }
+    &.mini {
+      width: 300px;
+    }
+  }
+  &.show {
+    display: block;
+    .modal-dialog {
+      transform: none;
+    }
+  }
+}
+
+//confirm layer
+.confirm-layer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: none;
+  margin: 1rem;
+  padding: 0.4375rem 1rem;
+  background: #444;
+  transform: translate(50px, 0);
+  transition: transform 0.3s ease-out;
+  z-index: 2;
+  color: #fff;
+  > button.close {
+    background: none;
+    border: none;
+    padding: 0 5px;
+    vertical-align: middle;
+    cursor: pointer;
+    > svg {
+      width: 10px;
+      path {
+        fill: #fff;
+      }
+    }
+  }
+  &.show {
+    display: block;
+    transform: none;
+  }
+}
+
+// 조직도 modal
+.modal .modal-dialog .modal-content .modal-body.invite-user {
+  max-height: 530px;
+  overflow: auto;
+  .selected-user-list {
+    padding-bottom: 1.071428571428571rem; // 15/14
+    .selected-user-wrap {
+      display: inline-block;
+      margin: 0.1428571428571429rem; // 2/14
+      padding: 0.3571428571428571rem; // 5/14
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 30px;
+      .user-pic-wrap {
+        position: relative;
+        display: inline-block;
+        margin-right: 5px;
+        vertical-align: middle;
+        .user-pic {
+          position: relative;
+          display: block;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          overflow: hidden;
+          text-align: center;
+          > img {
+            width: 25px;
+          }
+        }
+      }
+      .user-name {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      button.remove-user {
+        vertical-align: middle;
+        background: none;
+        border: none;
+        cursor: pointer;
+        > img {
+          width: 11px;
+        }
+      }
+    }
+  }
+  .msg-org-search {
+    height: 41px;
+    margin: 0 -20px;
+    border: 1px solid #f2f4fa;
+    border-width: 1px 0;
+  }
+  .msg-org-list {
+    .msg-org {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      > li {
+        margin-top: 15px;
+      }
+      .dept-name {
+        position: relative;
+        margin-bottom: 10px;
+        padding: 9px 18px;
+        > a {
+          display: inline-block;
+          text-decoration: none;
+          color: inherit;
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 10px;
+            height: 18px;
+            background: url(../images/ico-angle-right.svg) no-repeat left;
+            transition: transform 0.5s;
+          }
+          &.open::before {
+            transform: rotate(90deg);
+          }
+          .dept-name-tit {
+            font-weight: bold;
+          }
+          .staff-no {
+            color: #888;
+          }
+        }
+        label.checkbox {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          margin-top: -10px;
+        }
+      }
+      .msg-user-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+          position: relative;
+          &.has-child {
+            padding-left: 10px;
+          }
+          + li {
+            margin-top: 10px;
+          }
+          a.user-wrap {
+            display: block;
+            max-width: calc(100% - 50px);
+            text-decoration: none;
+            color: inherit;
+          }
+          .user-pic-wrap {
+            position: relative;
+            display: inline-block;
+            margin-right: 5px;
+            vertical-align: middle;
+            .user-pic {
+              position: relative;
+              display: block;
+              width: 35px;
+              height: 35px;
+              border-radius: 50%;
+              overflow: hidden;
+              text-align: center;
+              > img {
+                width: 35px;
+              }
+              &.no-pic {
+                background-color: #eee;
+                > img {
+                  width: 25px;
+                  margin-top: 10px;
+                }
+              }
+            }
+          }
+          .user-name {
+            display: inline-block;
+            max-width: calc(100% - 50px);
+            vertical-align: middle;
+            .user-message {
+              display: block;
+              max-width: 100%;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              color: #999;
+              font-size: 0.8571428571428571rem; // 12/14px
+            }
+          }
+          label.checkbox {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            margin-top: -10px;
+          }
+          ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}

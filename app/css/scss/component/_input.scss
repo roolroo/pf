@@ -1,0 +1,128 @@
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+    padding: .4375rem .875rem;
+    border: 1px solid $input-border;
+    outline: 0;
+    &:hover, &:focus {
+        border-color: darken($color: $input-border, $amount: 10%)
+    }
+}
+
+label.lbl-block {
+    display: block;
+    margin-bottom: 5px;
+    color: #888;
+    font-size: .85rem;
+}
+
+//checkbox
+label input[type="checkbox"] {
+    &.hanbiro {
+        z-index: -100 !important;
+        width: 0 !important;
+        height: 0 !important;
+        position: fixed;
+        opacity: 0;
+        + .lbl {
+            position: relative;
+            display: inline-block;
+            margin: 0;
+            font-weight: 400;
+            cursor: pointer;
+            &::before {
+                @extend %fa-icon;
+                @extend .fas;
+
+                content: "\a0";
+                display: inline-block;
+                position: relative;
+                top: -1px;
+                min-width: 18px;
+                height: 18px;
+                margin-right: 1px;
+                border: 1px solid #ccc;
+                cursor: pointer;
+                font-size: 0.8571428571428571rem; // 12/14px
+                color: $primary-color;
+                text-align: center;
+                line-height: 18px;
+            }
+        }
+        &:checked + .lbl::before {
+            content: fa-content($fa-var-check);
+            border-color: $primary-color;
+        }
+    }
+}
+
+//radio
+label input[type="radio"] {
+    &.hanbiro {
+        z-index: -100 !important;
+        width: 0 !important;
+        height: 0 !important;
+        position: fixed;
+        opacity: 0;
+        + .lbl {
+            position: relative;
+            display: inline-block;
+            margin: 0;
+            font-weight: 400;
+            cursor: pointer;
+            &::before {
+                @extend %fa-icon;
+                @extend .fas;
+
+                content: "\a0";
+                display: inline-block;
+                position: relative;
+                top: -1px;
+                min-width: 18px;
+                height: 18px;
+                margin-right: 1px;
+                border: 1px solid #ccc;
+                border-radius: 50%;
+                cursor: pointer;
+                font-size: 0.7857142857142857rem; // 11/14px
+                color: $primary-color;
+                text-align: center;
+                line-height: 18px;
+            }
+        }
+        &:checked + .lbl::before {
+            content: fa-content($fa-var-circle);
+            border-color: $primary-color;
+        }
+    }
+}
+
+.radio-block, .checkbox-block {
+    > label {
+        display: block;
+        + label {
+            margin-top: 5px;
+        }
+    }
+}
+.radio-inline, .checkbox-inline {
+    > label {
+        display: inline-block;
+        vertical-align: middle;
+        + label {
+            margin-left: 10px;
+        }
+    }
+}

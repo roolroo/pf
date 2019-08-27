@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="로그아웃" class="cls-1" d="M353,70h-5V88h5v1h-6V69h6v1Zm-1,13h6v4l9-7V79l-9-8v4h-6v8Zm1-1h6v3l7-5.125V79l-7-6v3h-6v6Z" transform="translate(-347 -69)"/>
+</svg>

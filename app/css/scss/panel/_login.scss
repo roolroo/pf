@@ -1,0 +1,61 @@
+#login-wrap {
+    display: flex;
+    height: 100%;
+	align-items: center;
+	justify-content: center;
+	background-color: $primary-color;
+    .login {
+        flex: none;
+        width: 420px;
+        text-align: center;
+         > img.logo {
+            margin-bottom: 65px;
+        }
+        > input {
+              &[type="text"],  &[type="password"],  &[type="url"] {
+                width: 100%;
+                height: 60px;
+                margin-bottom: 5px;
+                padding: 20px;
+                background: none;
+                border: 1px solid rgba($color: #fff, $alpha: 0.4);
+                border-radius: 5px;
+                color: #fff;
+            }
+            &::placeholder { // Chrome, Firefox, Opera, Safari 10.1+
+                color: #fff;
+                opacity: .5; // Firefox
+            }
+        }
+        .auto-login {
+            padding: 20px 0;
+            text-align: left;
+            color: #fff;
+        }
+        button[type="submit"] {
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: $primary-color;
+            font-weight: bold;
+            font-size: 1.428571428571429rem; // 20/14px
+        }
+        label input[type="checkbox"] {
+            &.hanbiro {
+                + .lbl {
+                    &::before {
+                        border-color: #fff;
+                        color: $primary-color;
+                    }
+                }
+                &:checked + .lbl::before {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}

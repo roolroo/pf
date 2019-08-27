@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fefefe;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="즐겨찾기" class="cls-1" d="M23.5,113l3.79,6.914L35,121.4l-5.366,5.763L30.607,135,23.5,131.647,16.393,135l0.974-7.833L12,121.4l7.708-1.489L23.5,113" transform="translate(-12 -113)"/>
+</svg>
